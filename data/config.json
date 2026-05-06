@@ -3,8 +3,8 @@
   "ai": {
     "provider": "openai",
     "model": "deepseek-ai/deepseek-v4-pro",
-    "base_url": "https://integrate.api.nvidia.com/v1/chat/completions",
-    "api_key_env": "nvapi-**",
+    "base_url": "https://integrate.api.nvidia.com/v1",
+    "api_key_env": "OPENAI_API_KEY",
     "temperature": 0.3,
     "max_tokens": 8192,
     "languages": [
@@ -59,12 +59,12 @@
       {
         "name": "LWN.net",
         "url": "https://lwn.net/headlines/full_text?key=${LWN_KEY}",
-        "enabled": true,
+        "enabled": false,
         "category": "linux-kernel"
       }
     ],
     "reddit": {
-      "enabled": true,
+      "enabled": false,
       "subreddits": [
         {
           "subreddit": "MachineLearning",
@@ -97,7 +97,7 @@
       ]
     },
     "twitter": {
-      "enabled": true,
+      "enabled": false,
       "users": [
         "karpathy",
         "roifex"
