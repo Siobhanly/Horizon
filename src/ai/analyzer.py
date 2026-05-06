@@ -12,7 +12,7 @@ from .prompts import CONTENT_ANALYSIS_SYSTEM, CONTENT_ANALYSIS_USER
 from .utils import parse_json_response
 from ..models import ContentItem
 
-DEFAULT_THROTTLE_SEC = 0.0
+DEFAULT_THROTTLE_SEC = 1.0
 
 
 class ContentAnalyzer:

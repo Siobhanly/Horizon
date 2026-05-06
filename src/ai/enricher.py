@@ -35,6 +35,9 @@ class ContentEnricher:
         Args:
             items: Content items to enrich (modified in-place)
         """
+        import asyncio
+
+        throttle_sec = 1.0
         with Progress(
             SpinnerColumn(),
             TextColumn("[progress.description]{task.description}"),
@@ -44,12 +47,14 @@ class ContentEnricher:
         ) as progress:
             task = progress.add_task("Enriching", total=len(items))
 
-            for item in items:
+            for index, item in enumerate(items):
                 try:
                     await self._enrich_item(item)
                 except Exception as e:
                     print(f"Error enriching item {item.id}: {e}")
                 progress.advance(task)
+                if index < len(items) - 1:
+                    await asyncio.sleep(throttle_sec)
 
     async def _web_search(self, query: str, max_results: int = 3) -> list:
         """Search the web for context via DuckDuckGo.
