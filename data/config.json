@@ -8,8 +8,7 @@
     "temperature": 0.3,
     "max_tokens": 8192,
     "languages": [
-      "zh",
-      "en"
+      "zh"
     ]
   },
   "sources": {
@@ -61,6 +60,24 @@
         "url": "https://lwn.net/headlines/full_text?key=${LWN_KEY}",
         "enabled": false,
         "category": "linux-kernel"
+      },
+      {
+        "name": "Reddit r/MachineLearning",
+        "url": "https://www.reddit.com/r/MachineLearning/top/.rss?t=day",
+        "enabled": true,
+        "category": "ml-research"
+      },
+      {
+        "name": "Reddit r/LocalLLaMA",
+        "url": "https://www.reddit.com/r/LocalLLaMA/top/.rss?t=day",
+        "enabled": true,
+        "category": "local-llm"
+      },
+      {
+        "name": "Reddit r/artificial",
+        "url": "https://www.reddit.com/r/artificial/top/.rss?t=day",
+        "enabled": true,
+        "category": "ai-news"
       }
     ],
     "reddit": {
@@ -110,7 +127,7 @@
     }
   },
   "filtering": {
-    "ai_score_threshold": 8.0,
+    "ai_score_threshold": 6.0,
     "time_window_hours": 24
   },
   "webhook": {
@@ -122,8 +139,7 @@
     "layout": "collapsible",
     "fallback_layout": "markdown",
     "languages": [
-      "zh",
-      "en"
+      "zh"
     ],
     "request_body": {
       "msg_type": "interactive",
