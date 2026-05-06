@@ -23,6 +23,7 @@ LABELS = {
         "source": "Source",
         "background": "Background",
         "discussion": "Discussion",
+        "use_cases": "Recommended Use Cases",
         "references": "References",
         "tags": "Tags",
         "empty_body": (
@@ -41,6 +42,7 @@ LABELS = {
         "source": "来源",
         "background": "背景",
         "discussion": "社区讨论",
+        "use_cases": "推荐使用场景",
         "references": "参考链接",
         "tags": "标签",
         "empty_body": (
@@ -170,6 +172,7 @@ class DailySummarizer:
             or item.ai_summary
             or ""
         )
+        use_cases = meta.get(f"use_cases_{language}") or meta.get("use_cases") or ""
         background = meta.get(f"background_{language}") or meta.get("background") or ""
         discussion = (
             meta.get(f"community_discussion_{language}")
@@ -180,6 +183,7 @@ class DailySummarizer:
         if language == "zh":
             title = _pangu(title)
             summary = _pangu(summary)
+            use_cases = _pangu(use_cases)
             background = _pangu(background)
             discussion = _pangu(discussion)
 
@@ -211,6 +215,10 @@ class DailySummarizer:
             "",
             source_line,
         ]
+
+        if use_cases:
+            lines.append("")
+            lines.append(f"**{labels['use_cases']}**:\n{use_cases}")
 
         if background:
             lines.append("")

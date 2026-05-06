@@ -108,6 +108,7 @@ Provide EACH text field in BOTH English and Chinese. Use the following key namin
 - whats_new_en / whats_new_zh
 - why_it_matters_en / why_it_matters_zh
 - key_details_en / key_details_zh
+- use_cases_en / use_cases_zh
 - background_en / background_zh
 - community_discussion_en / community_discussion_zh
 
@@ -120,9 +121,11 @@ Field definitions:
 
 3. **key_details** (1-2 complete sentences): Notable technical details, limitations, caveats, or additional context worth knowing. Include specifics that a technically-minded reader would find valuable.
 
-4. **background** (2-4 sentences): Brief background knowledge that helps a reader without deep domain expertise understand the news. Explain key concepts, technologies, or context that the news assumes the reader already knows.
+4. **use_cases** (2-3 bullet points): Specific, actionable scenarios where a reader could apply or benefit from this news. Each bullet should describe a concrete use case — who would use it, how, and in what situation. Think from the perspective of a developer, researcher, product manager, or tech lead.
 
-5. **community_discussion** (1-3 sentences): If community comments are provided, summarize the overall sentiment and key viewpoints from the discussion — agreements, disagreements, concerns, additional insights, or notable counterarguments. If no comments are provided, return an empty string.
+5. **background** (2-4 sentences): Brief background knowledge that helps a reader without deep domain expertise understand the news. Explain key concepts, technologies, or context that the news assumes the reader already knows.
+
+6. **community_discussion** (1-3 sentences): If community comments are provided, summarize the overall sentiment and key viewpoints from the discussion — agreements, disagreements, concerns, additional insights, or notable counterarguments. If no comments are provided, return an empty string.
 
 **CRITICAL — Language rules (MUST follow):**
 - All *_en fields MUST be written in English.
@@ -164,6 +167,8 @@ Respond with valid JSON only. Each _en field must be in English; each _zh field 
   "why_it_matters_zh": "<用中文写1-2句话>",
   "key_details_en": "<1-2 sentences in English>",
   "key_details_zh": "<用中文写1-2句话>",
+  "use_cases_en": "<2-3 bullet points in English, each describing a concrete scenario>",
+  "use_cases_zh": "<用中文写2-3个要点，每个描述一个具体使用场景>",
   "background_en": "<2-4 sentences in English, or empty string>",
   "background_zh": "<用中文写2-4句话，或空字符串>",
   "community_discussion_en": "<1-3 sentences in English, or empty string>",
